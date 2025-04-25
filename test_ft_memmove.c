@@ -1,4 +1,3 @@
-#include "../libft.h"
 #include <stdio.h>
 #include "test.h"
 #include <string.h>
@@ -30,7 +29,7 @@ int main(void){
 	res2 = ft_memmove(dest2, (const char *)src2, TEST2SIZE);
 
 	char *check2a = "ylongongbasictest";
-	if (strcmp(dest2, check2a) == 0)
+	if (strcmp(res2, check2a) == 0)
 		printf("%s3:OK ", KGRN);
 	else
 		printf("%s3:KO ", KRED);

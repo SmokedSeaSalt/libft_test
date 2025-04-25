@@ -1,23 +1,17 @@
-#include "../libft.h"
 #include <stdio.h>
 #include "test.h"
+#include <string.h>
 
 int main(void){
-	int errorflag = 0;
-
-	char teststr[7] = "abcdefg";
-	ft_bzero(teststr, 5);
-	for (int i = 0; i < 5; i++)
-	{
-		if (teststr[i] != 0)
-			errorflag = 1;
-	}
-
-	if (errorflag == 0)
+	char test1a[8] = "abcdefg";
+	ft_bzero(test1a, 5);
+	char test1b[8] = "abcdefg";
+	bzero(test1b, 5);
+	if (memcmp(test1a, test1b, 8))
 		printf("%s1:OK ", KGRN);
 	else
 		printf("%s1:KO ", KRED);
-
+	printf("%s %s ", test1a, test1b);
 	printf("\n%s", KNRM);
 }
 

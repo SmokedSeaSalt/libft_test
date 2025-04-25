@@ -1,6 +1,6 @@
 # Define paths
-LIBRARY = ../libft.a   # Path to the library in the root folder
-LIBPATH = ..
+LIBRARY = ../libft/libft.a   # Path to the library in the root folder
+LIBPATH = ../libft
 # Compiler and flags
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address -lbsd
