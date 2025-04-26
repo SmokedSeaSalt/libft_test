@@ -7,11 +7,11 @@ int main(void){
 	ft_bzero(test1a, 5);
 	char test1b[8] = "abcdefg";
 	bzero(test1b, 5);
-	if (memcmp(test1a, test1b, 8))
+	if (memcmp(test1a, test1b, 8) == 0)
 		printf("%s1:OK ", KGRN);
 	else
 		printf("%s1:KO ", KRED);
-	printf("%s %s ", test1a, test1b);
+
 	printf("\n%s", KNRM);
 }
 

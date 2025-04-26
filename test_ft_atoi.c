@@ -56,7 +56,7 @@ int main(void){
 		printf("%s9:OK ", KGRN);
 	else
 		printf("%s9:KO ", KRED);
-	printf("%d %d", ft_atoi(test9), atoi(test9));
+	//printf("%d %d", ft_atoi(test9), atoi(test9));
 
 	char *test10 = "  + 123";
 	if (ft_atoi(test10) == atoi(test10))
