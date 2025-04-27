@@ -23,6 +23,8 @@ $(LIBRARY):
 
 # Run all .out files
 run: $(LIBRARY) $(OUTS)
+	make -C $(LIBPATH)
+	$(MAKE) all
 	@for file in $(OUTS); do \
 		echo "Running $$file"; \
 		./$$file; \
