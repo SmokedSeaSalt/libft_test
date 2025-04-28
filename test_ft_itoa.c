@@ -18,7 +18,6 @@ int main(void){
 		printf("%s2:OK ", KGRN);
 	else
 		printf("%s2:KO ", KRED);
-	printf(" %s ", ret2);
 	free(ret2);
 
 	int test3 = 456;
@@ -44,7 +43,6 @@ int main(void){
 	else
 		printf("%s5:KO ", KRED);
 	free(ret5);
-
 
 	//printf("%d %d", ft_itoa(test9), itoa(test9));
 	printf("\n%s", KNRM);

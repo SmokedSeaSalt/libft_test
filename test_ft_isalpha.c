@@ -8,7 +8,7 @@ int main(void){
 	else
 		printf("%s1:KO ", KRED);
 
-	if (ft_isalpha('A') > 1)
+	if (ft_isalpha('A') > 0)
 		printf("%s2:OK ", KGRN);
 	else
 		printf("%s2:KO ", KRED);

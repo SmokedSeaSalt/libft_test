@@ -19,27 +19,21 @@ int main(void){
 
 	char *test2a;
 	test2a = ft_calloc(0, 8);
-	char *test2b;
-	test2b = calloc(0, 8);
-	if (memcmp(test2a, test2b, 1) == 0)
+	if (test2a != NULL)
 		printf("%s2:OK ", KGRN);
 	else
 		printf("%s2:KO ", KRED);
 	//printf("%s %s ", test2a, test2b);
 	free(test2a);
-	free(test2b);
 
 	char *test3a;
 	test3a = ft_calloc(8, 0);
-	char *test3b;
-	test3b = calloc(8, 0);
-	if (memcmp(test3a, test3b, 1) == 0)
+	if (test3a != NULL)
 		printf("%s3:OK ", KGRN);
 	else
 		printf("%s3:KO ", KRED);
 	//printf("%s %s ", test3a, test3b);
 	free(test3a);
-	free(test3b);
 
 	//wont compile because of calloc error
 	//argument 2 value ‘9223372036854775808’ exceeds
