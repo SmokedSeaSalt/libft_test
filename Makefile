@@ -1,9 +1,10 @@
 # Define paths
-LIBRARY = ../libft/libft.a   # Path to the library in the root folder
-LIBPATH = ../libft
+#LIBRARY = ../libft/libft.a   # Path to the library in the root folder
+LIBPATH := $(shell [ -d ../libft ] && echo ../libft || ([ -d ../Libft ] && echo ../Libft))
+LIBRARY := $(LIBPATH)/libft.a
 # Compiler and flags
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address -lbsd
+CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address -lbsd -I $(LIBPATH)/
 
 OBJS=ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o \
 	ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o \
@@ -23,7 +24,6 @@ else
 ALLOBJS=$(OBJS)
 endif
 endif
-
 
 # Create a list of output .out files based on test.c files
 OUTS = $(patsubst %.o, test_%.out, $(ALLOBJS))

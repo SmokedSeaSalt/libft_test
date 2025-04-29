@@ -1,7 +1,7 @@
 #ifndef TEST_H
 # define TEST_H
 
-#include "../libft/libft.h"
+#include "libft.h"
 
 #define KNRM  "\x1B[0m"
 #define KRED  "\x1B[31m"
