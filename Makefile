@@ -5,27 +5,42 @@ LIBPATH = ../libft
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address -lbsd
 
-# Find all test.c files in the SRC_DIR (current folder)
-TESTS = $(wildcard *.c)
+OBJS=ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o \
+	ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o \
+	ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o \
+	ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o \
+	ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o \
+	ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o \
+	ft_putnbr_fd.o
+BONUSOBJS=ft_lstnew_bonus.o ft_lstadd_front_bonus.o
+
+ifdef ISBONUS
+ALLOBJS=$(OBJS) $(BONUSOBJS)
+else
+ifdef ONLYBONUS
+ALLOBJS=$(BONUSOBJS)
+else
+ALLOBJS=$(OBJS)
+endif
+endif
+
 
 # Create a list of output .out files based on test.c files
-OUTS = $(patsubst %.c, %.out, $(TESTS))
+OUTS = $(patsubst %.o, test_%.out, $(ALLOBJS))
 
 # Default target: build all tests
 all: $(LIBRARY) $(OUTS)
 
 $(LIBRARY):
-	make bonus -C $(LIBPATH)
+	make -C $(LIBPATH)
 
 # Rule to create .out files from .c files
 %.out: %.c $(LIBRARY)
 	$(CC) $(CFLAGS) -o $@ $< $(LIBRARY)
 
 # Run all .out files
-run: $(LIBRARY) $(OUTS)
-	make -C $(LIBPATH)
-	$(MAKE) all
-	@for file in $(OUTS); do \
+run:
+	@for file in *.out; do \
 		echo "Running $$file"; \
 		./$$file; \
 	done
@@ -38,9 +53,20 @@ clean:
 fclean: clean
 	make fclean -C $(LIBPATH)
 
+cleantest:
+	rm -f *.out
+
 re: fclean
-	make all bonus -C $(LIBPATH)
+	$(MAKE) $(LIBPATH)
 	$(MAKE) all
 
+bonus:
+	make bonus -C $(LIBPATH)
+	$(MAKE) ISBONUS=1 all
+
+onlybonus:
+	make bonus -C $(LIBPATH)
+	$(MAKE) cleantest
+	$(MAKE) ONLYBONUS=1 all
 
 .PHONY: all clean re
