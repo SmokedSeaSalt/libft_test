@@ -1,15 +1,15 @@
-place in a folder at the same level as libft.
+place in a folder at the same level as libft.\
 Example:
 
-something/
-├── libft/
-│   ├── ft_strlen.c
-│   ├── ft_atoi.c
-│   ├── libft.h
-│   └── Makefile
-├── libft_test/
-│   ├── test_ft_strlen.c
-│   ├── test_ft_atoi.c
+something/\
+├── libft/\
+│   ├── ft_strlen.c\
+│   ├── ft_atoi.c\
+│   ├── libft.h\
+│   └── Makefile\
+├── libft_test/\
+│   ├── test_ft_strlen.c\
+│   ├── test_ft_atoi.c\
 │   └── Makefile
 
 Be sure that the libft folder is not capitalized. This will not work.
