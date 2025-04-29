@@ -1,5 +1,4 @@
 place in a folder at the same level as libft.\
-Be sure that the libft folder is not capitalized. This will not work.\
 Example:
 
 something/\
