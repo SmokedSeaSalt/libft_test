@@ -67,9 +67,9 @@ int main(void){
 		return (-1);
 	read(fd, res2, strlen(test2) + 1);
 	if (strncmp(testres2, res2, strlen(test2) + 1) == 0)
-		printf("%s1:OK ", KGRN);
+		printf("%s2:OK ", KGRN);
 	else
-		printf("%s1:KO ", KRED);
+		printf("%s2:KO ", KRED);
 	close(fd);
 	if (remfile() < 0)
 		printf("Error deleting file");
