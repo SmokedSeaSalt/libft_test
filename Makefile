@@ -15,7 +15,7 @@ OUTS = $(patsubst %.c, %.out, $(TESTS))
 all: $(LIBRARY) $(OUTS)
 
 $(LIBRARY):
-	make -C $(LIBPATH)
+	make bonus -C $(LIBPATH)
 
 # Rule to create .out files from .c files
 %.out: %.c $(LIBRARY)
@@ -39,7 +39,7 @@ fclean: clean
 	make fclean -C $(LIBPATH)
 
 re: fclean
-	make all -C $(LIBPATH)
+	make all bonus -C $(LIBPATH)
 	$(MAKE) all
 
 
