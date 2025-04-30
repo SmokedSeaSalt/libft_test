@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include "test.h"
 #include <stdlib.h>
@@ -6,18 +7,18 @@
 int main(void)
 {
 	//setup
-	int test1 = 42;
 	t_list *head = NULL;
-	ft_lstadd_front(&head, ft_lstnew(&test1));
-	char *test2 = "thisisateststr";
-	ft_lstadd_front(&head, ft_lstnew(test2));
-
-	if (*(int *)(head->next->content) == test1)
+	if (ft_lstlast(head) == NULL)
 		printf("%s1:OK ", KGRN);
 	else
 		printf("%s1:KO ", KRED);
 
-	if (strcmp((char *)head->content, test2) == 0)
+	int test1 = 42;
+	ft_lstadd_front(&head, ft_lstnew(&test1));
+	char *test2 = "thisisateststr";
+	ft_lstadd_front(&head, ft_lstnew(test2));
+
+	if (ft_lstlast(head) == head->next)
 		printf("%s2:OK ", KGRN);
 	else
 		printf("%s2:KO ", KRED);

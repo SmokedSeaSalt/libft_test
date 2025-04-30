@@ -4,7 +4,7 @@ LIBPATH := $(shell [ -d ../libft ] && echo ../libft || ([ -d ../Libft ] && echo 
 LIBRARY := $(LIBPATH)/libft.a
 # Compiler and flags
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address -lbsd -I $(LIBPATH)/
+CFLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address -lbsd -I $(LIBPATH)/
 
 OBJS=ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o \
 	ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o \
@@ -13,7 +13,9 @@ OBJS=ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o \
 	ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o \
 	ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o \
 	ft_putnbr_fd.o
-BONUSOBJS=ft_lstnew_bonus.o ft_lstadd_front_bonus.o
+BONUSOBJS=ft_lstnew_bonus.o ft_lstadd_front_bonus.o ft_lstsize_bonus.o \
+	ft_lstlast_bonus.o ft_lstadd_back_bonus.o ft_lstdelone_bonus.o \
+	ft_lstclear_bonus.o ft_lstiter_bonus.o
 
 ifdef ISBONUS
 ALLOBJS=$(OBJS) $(BONUSOBJS)
