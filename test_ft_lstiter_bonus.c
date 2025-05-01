@@ -23,12 +23,12 @@ int main(void)
 	if (*(int *)(head->content) == test1val)
 		printf("%s1:OK ", KGRN);
 	else
-		printf("%s1:KO %d", KRED, *(int *)(head->content));
+		printf("%s1:KO ", KRED);
 
 	if (*(int *)(head->next->content) == test1val)
 		printf("%s2:OK ", KGRN);
 	else
-		printf("%s2:KO %d", KRED, *(int *)(head->next->content));
+		printf("%s2:KO ", KRED);
 	free(head->next);
 	free(head);
 
